@@ -5,4 +5,4 @@ services:
     volumes:
     - ./kata:/kata
     working_dir: /kata
-    command: nosetests
+    command: sniffer
