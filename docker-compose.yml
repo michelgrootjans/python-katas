@@ -3,6 +3,6 @@ services:
   kata:
     build: .
     volumes:
-    - ./kata:/kata
+    - ./bowling:/kata
     working_dir: /kata
     command: sniffer
