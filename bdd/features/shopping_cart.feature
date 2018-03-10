@@ -8,3 +8,9 @@ Scenario: Add a single item to the shopping cart
     And an empty shopping cart
    When I add the item to my shopping cart
    Then the total of my shopping cart is € 1.00
+
+Scenario: Add a single item to the shopping cart
+  Given an item costing € 1.00
+    And an empty shopping cart
+   When I add the item to my shopping cart twice
+   Then the total of my shopping cart is € 1.00
