@@ -6,3 +6,11 @@ services:
     - ./bowling:/kata
     working_dir: /kata
     command: sniffer
+
+  bdd:
+    image: ruby:alpine
+    volumes:
+    - ./bdd:/app
+    - ./bdd/bundle:/usr/local/bundle
+    working_dir: /app
+    command: cucumber
