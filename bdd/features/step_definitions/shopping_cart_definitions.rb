@@ -1,23 +1,20 @@
-require_relative '../../app/catalog'
-require_relative '../../app/shopping_cart'
-
-Given("an item costing € {float}") do |float|
-  the[:catalog] = Catalog.new
-  the[:catalog].add("item", float)
-end
-
 Given("an empty shopping cart") do
   the[:shopping_cart] = ShoppingCart.new
 end
 
-When("I add the item to my shopping cart") do
-  product = the[:catalog].find("item")
+Given("a {word} is for sale at € {float}") do |word, float|  
+  the[:catalog] ||= Catalog.new
+  the[:catalog].add(word, float)
+end
+
+When("I add a {word} to my shopping cart") do |word|
+  product = the[:catalog].find(word)
   the[:shopping_cart].add(1, product)
 end
 
-When("I add the item to my shopping cart twice") do
-  product = the[:catalog].find("item")
-  the[:shopping_cart].add(2, product)
+When("I add {int} {word}s to my shopping cart") do |int, word|
+  product = the[:catalog].find(word)
+  the[:shopping_cart].add(int, product)
 end
 
 Then("the total of my shopping cart is € {float}") do |float|

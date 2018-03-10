@@ -3,20 +3,22 @@ Feature: Shopping cart
   I want to know the total of my shopping cart before checking out
   so I can decide when to stop shopping
 
-Scenario: Add a single item to the shopping cart
-  Given an item costing € 1.00
-    And an empty shopping cart
-   When I add the item to my shopping cart
-   Then the total of my shopping cart is € 1.00
+  Background:
+    Given an empty shopping cart
 
 Scenario: Add a single item to the shopping cart
-  Given an item costing € 2.00
-    And an empty shopping cart
-   When I add the item to my shopping cart
-   Then the total of my shopping cart is € 2.00
+  Given a chair is for sale at € 10.00
+  When I add a chair to my shopping cart
+  Then the total of my shopping cart is € 10.00
 
-Scenario: Add a single item to the shopping cart
-  Given an item costing € 1.00
-    And an empty shopping cart
-   When I add the item to my shopping cart twice
-   Then the total of my shopping cart is € 2.00
+Scenario: Add an item twice to the shopping cart
+  Given a chair is for sale at € 10.00
+  When I add 2 chairs to my shopping cart
+  Then the total of my shopping cart is € 20.00
+
+Scenario: Add an item twice to the shopping cart
+  Given a chair is for sale at € 10.00
+  And a table is for sale at € 20.00
+  When I add 4 chairs to my shopping cart
+  And I add a table to my shopping cart
+  Then the total of my shopping cart is € 60.00

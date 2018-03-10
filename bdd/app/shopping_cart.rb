@@ -13,6 +13,7 @@ class ShoppingCart
 end
 
 class ShoppingCartItem
+  attr_reader :qty, :product
   def initialize(qty, product)
     @qty = qty
     @product = product

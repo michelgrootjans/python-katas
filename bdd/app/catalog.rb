@@ -8,7 +8,7 @@ class Catalog
   end
 
   def find(name)
-    @products.first{ |p| p.name == name}
+    @products.find{ |p| p.name == name}
   end
 end
 

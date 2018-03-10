@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 bundle check || bundle install
 clear
-cucumber
+bundle exec cucumber
