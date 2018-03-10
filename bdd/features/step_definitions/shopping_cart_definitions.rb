@@ -11,10 +11,13 @@ Given("an empty shopping cart") do
 end
 
 When("I add the item to my shopping cart") do
-  catalog = the[:catalog]
-  shopping_cart = the[:shopping_cart]
-  product = catalog.find("item")
-  shopping_cart.add(1, product)
+  product = the[:catalog].find("item")
+  the[:shopping_cart].add(1, product)
+end
+
+When("I add the item to my shopping cart twice") do
+  product = the[:catalog].find("item")
+  the[:shopping_cart].add(2, product)
 end
 
 Then("the total of my shopping cart is € {float}") do |float|
