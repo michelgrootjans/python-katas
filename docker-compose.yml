@@ -13,4 +13,4 @@ services:
     - ./bdd:/app
     - ./bdd/bundle:/usr/local/bundle
     working_dir: /app
-    command: cucumber
+    command: sh bdd.sh
