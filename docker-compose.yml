@@ -7,6 +7,13 @@ services:
     working_dir: /kata
     command: sniffer
 
+  behave:
+    build: behave
+    volumes:
+    - ./behave:/app
+    working_dir: /app
+    command: behave
+
   bdd:
     image: ruby:alpine
     volumes:
