@@ -6,8 +6,12 @@ class Catalog(object):
     self.products.append(Product(name, price))
 
   def find(self, name):
-    return Product("chair", 10.00)
+    for product in self.products:
+      if product.name == name:
+        return product
+    return Product("unknown product", 0)
 
 class Product(object):
   def __init__(self, name, price):
-    pass
+    self.name = name
+    self.price = price

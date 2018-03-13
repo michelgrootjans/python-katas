@@ -6,21 +6,21 @@ from app.catalog import *
 def step_impl(context):
   context.shoppingCart = ShoppingCart()
 
-@given(u'a chair is for sale for € 10.00')
-def step_impl(context):
+@given(u'a {product} is for sale for € {price}')
+def step_impl(context, product, price):
   if not hasattr(context, 'catalog'):
     context.catalog = Catalog()
-  context.catalog.add("chair", 10.00)
+  context.catalog.add(product, float(price))
 
-@when(u'I add a chair to my shopping cart')
-def step_impl(context):
-  product = context.catalog.find("chair")
+@when(u'I add a {name} to my shopping cart')
+def step_impl(context, name):
+  product = context.catalog.find(name)
   context.shoppingCart.add(1, product)
 
-@when(u'I add 2 chairs to my shopping cart')
-def step_impl(context):
-  product = context.catalog.find("chair")
-  context.shoppingCart.add(2, product)
+@when(u'I add {qty:d} {name}s to my shopping cart')
+def step_impl(context, qty, name):
+  product = context.catalog.find(name)
+  context.shoppingCart.add(qty, product)
 
 @then(u'the total of my shopping cart is € {price}')
 def step_impl(context, price):
