@@ -1,9 +1,5 @@
-import unittest
+from nose.tools import assert_equals
 from app.game import Game
 
-class BowlingGameTest(unittest.TestCase):
-  def setUp(self):
-    self.game = Game()
-
-  def test_new_game(self):
-    self.assertEqual(self.game.score(), 0)
+def test_new_game():
+    assert_equals(Game().score(), 0)
