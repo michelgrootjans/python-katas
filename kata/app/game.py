@@ -1,4 +1,3 @@
 class Game(object):
-  def score(self):
-    return 0
-  
+    def score(self):
+        return 0
