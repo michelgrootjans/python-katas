@@ -8,9 +8,8 @@ services:
     command: sniffer
 
   bdd:
-    image: ruby:alpine
+    build: bdd
     volumes:
-    - ./bdd:/app
-    - ./bdd/bundle:/usr/local/bundle
-    working_dir: /app
-    command: sh bdd.sh
+    - ./bdd:/bdd
+    working_dir: /bdd
+    command: behave

@@ -1,1 +1,0 @@
-Dir.glob(File.join('.', 'app', '**', "*.rb")) {|file| require  file }
