@@ -1,15 +1,15 @@
 version: '3'
 services:
-  kata:
-    build: kata
+  tdd:
+    build: .
     volumes:
-    - ./kata:/kata
-    working_dir: /kata
+    - .:/app
+    working_dir: /app
     command: sniffer
 
   bdd:
-    build: bdd
+    build: .
     volumes:
-    - ./bdd:/bdd
-    working_dir: /bdd
+    - .:/app
+    working_dir: /app
     command: behave
