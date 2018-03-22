@@ -1,16 +1,15 @@
 # Python katas
-This is a setup directory to start python katas
-I'm playing around with demoing cucumber, with ruby however
+This is a setup directory to start python katas with unit tests or features
 
-## TDD
-to start the python kata run:
-> docker-compose run tdd
+# To work on your own system
+Make sure all the dependencies are installed by running
+> pip3 install -r requirements.txt
 
-You can then start writing tests in the `tests` directory
+`sniffer` will autorun the unit tests. You can then start adding tests in the `tests` directory.
 
-## BDD
-to start the BDD run:
-> docker-compose run bdd
+`behave` to execute all features once. You can then start adding features in the `featuresn` directory.
 
-You can then start writing features in the `features` directory
+# The docker way
+`docker-compose run tdd` will autorun the unit tests.
 
+`docker-compose run bdd` to execute all features once.
